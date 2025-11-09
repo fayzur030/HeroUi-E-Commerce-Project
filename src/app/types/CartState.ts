@@ -1,4 +1,4 @@
-import { CartItem } from './CartItem '
+import { CartItem } from './CartItem'
 import { Product } from './Product'
 
 export interface CartState {
