@@ -10,7 +10,7 @@ import {
 
 export default function NavBar() {
   return (
-    <Navbar>
+    <Navbar className='bg-amber-50'>
       <NavbarBrand>
         <p className='font-bold text-inherit'>🛍️ HeroShop</p>
       </NavbarBrand>
