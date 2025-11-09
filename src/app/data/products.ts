@@ -6,8 +6,9 @@ import product4 from '../assets/Product 4.jpeg'
 import product5 from '../assets/Product 5.webp'
 import product6 from '../assets/Product 6.webp'
 import product8 from '../assets/Product 8.webp'
+import { Product } from '../types/Product'
 
-export const products = [
+export const products: Product[] = [
   {
     id: 1,
     name: 'Classic White T-Shirt',
