@@ -6,9 +6,7 @@ import NavBar from './component/Navbar'
 export default function App() {
   return (
     <>
-      <NavBar />
       <Home />
-      <Footer />
     </>
   )
 }
