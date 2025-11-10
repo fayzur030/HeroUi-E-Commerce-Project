@@ -2,27 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import { useCartStore } from '../store/useCartStore'
-import {
-  Button,
-  Card,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from '@heroui/react'
+import { Button, Card } from '@heroui/react'
 import Image from 'next/image'
 import { Product } from '../types/Product'
 import { motion } from 'framer-motion'
-import ProductDropdown from './ProductDropdown'
-import Link from 'next/link'
-import HeroSection from './HeroSection.tsx'
 
-export default function Home() {
+import Link from 'next/link'
+
+export default function Allproducts() {
   const { addToCart } = useCartStore()
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -39,30 +29,7 @@ export default function Home() {
 
   return (
     <div className='max-w-7xl mx-auto p-6'>
-      <HeroSection />
-      <div>
-        <ProductDropdown />
-      </div>
-
       {/* Sign-in Modal */}
-      <Modal isOpen={isModalOpen} onOpenChange={setIsModalOpen}>
-        <ModalContent>
-          <ModalHeader className='text-xl font-bold text-center'>
-            🔐 Sign In Required
-          </ModalHeader>
-          <ModalBody>
-            <p className='text-center text-gray-600'>
-              Please sign in to continue your purchase.
-            </p>
-          </ModalBody>
-          <ModalFooter className='justify-center'>
-            <Button color='primary' onPress={() => setIsModalOpen(false)}>
-              Okay
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-
       <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8'>
         {products.map((p, index) => (
           <motion.div
@@ -102,11 +69,7 @@ export default function Home() {
                 >
                   Add to Cart
                 </Button>
-                <Button
-                  color='primary'
-                  className='flex-1'
-                  onPress={() => setIsModalOpen(true)}
-                >
+                <Button color='primary' className='flex-1'>
                   Buy Now
                 </Button>
               </div>

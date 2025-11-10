@@ -48,8 +48,8 @@ export default function App() {
           {/* Desktop Menu */}
           <NavbarItem className='hidden sm:flex gap-3'>
             <Link href='/'>Home</Link>
+            <Link href='/all-products'>Product</Link>
             <Link href='/about'>About</Link>
-            <Link href='/contact'>Contact</Link>
           </NavbarItem>
         </NavbarContent>
 
@@ -106,7 +106,9 @@ export default function App() {
                 <DropdownItem key='analytics'>Analytics</DropdownItem>
                 <DropdownItem key='system'>System</DropdownItem>
                 <DropdownItem key='Configurations'>Configurations</DropdownItem>
-                <DropdownItem key='Help & Feedback'>Help & Feedback</DropdownItem>
+                <DropdownItem key='Help & Feedback'>
+                  Help & Feedback
+                </DropdownItem>
                 <DropdownItem
                   key='logout'
                   color='danger'
@@ -156,7 +158,7 @@ export default function App() {
           {/* Menu Links */}
           <Link href='/'>Home</Link>
           <Link href='/about'>About</Link>
-          <Link href='/contact'>Contact</Link>
+          <Link href='/all-products'>Product</Link>
 
           {/* Sign In for mobile */}
           {!user && (
