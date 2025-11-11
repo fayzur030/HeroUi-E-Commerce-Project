@@ -4,7 +4,8 @@ export interface CartItem extends Product {
   id: number
   title: string
   price: number
+  name: string
   image: string
-  description?: string
+  description: string
   quantity: number
 }
